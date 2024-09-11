@@ -7,6 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Update package list and install necessary tools
 RUN apt-get update && apt-get install -y \
     wget \
+    ruby \
     build-essential \     
     clang \
     ninja-build \
@@ -29,14 +30,10 @@ RUN cd /tmp && \
 ENV PATH="/opt/cmake/bin:${PATH}"
 
 
-# Pull Lab 0 Template Repository - Token
-ARG GITHUB_TOKEN
+# Pull L02 TDD Activity
 RUN cd /home && \
-    git clone --recurse-submodules https://github.com/jonathangjertsen/tddec.git
+    git clone --recurse-submodules https://github.com/ese5180/l02-tdd-activity.git
 
-
-# # Copy the Unity source into the workspace (for easier access)
-# RUN cp -r /opt/unity/src /workspace/unity
 
 # Set the default command to run when the container starts
 CMD ["/bin/bash"]
