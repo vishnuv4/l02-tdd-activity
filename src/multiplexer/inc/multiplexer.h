@@ -13,6 +13,7 @@ typedef struct {
 extern muxHandler_t muxHandler_g;
 
 void mux_init(void);
-void mux_getOutput(int num);
+void mux_setOutput(int num);
+bool mux_getOutput(void);
 
 #endif

@@ -16,7 +16,7 @@ void mux_setOutput(int num)
     muxHandler_g.A[2] = num & (1 << 2);
 }
 
-bool mux_getOutput()
+bool mux_getOutput(void)
 {
     return muxHandler_g.out;
 }
